@@ -14,6 +14,6 @@ public class WordWrapTest {
     @Test
     public void lineShouldWrapIfOverLength() {
         String result = WordWrap.wrap("The Sleepy", LINE_LENGTH);
-        assertEquals("The s\nleepy", result);
+        assertEquals("The S\nleepy", result);
     }
 }
