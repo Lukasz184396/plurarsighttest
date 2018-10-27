@@ -9,8 +9,10 @@ public class WordWrap {
         accumulator.append(inputLine, 0, Math.min(length, lineLength));
 
         if (length > lineLength) {
-            accumulator.append("\n");
-            accumulator.append(inputLine, lineLength, length);
+            for (int i = lineLength; i < length; i+=lineLength) {
+                accumulator.append("\n");
+                accumulator.append(inputLine.substring(i, i + Math.min(lineLength, length-i) ));
+            }
         }
 
         return accumulator.toString();
