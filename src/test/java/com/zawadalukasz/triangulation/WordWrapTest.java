@@ -8,7 +8,7 @@ public class WordWrapTest {
 
     public static final int LINE_LENGTH = 5;
 
-    //TO DO implement method that breaks words on specified space with new line
+    //implement method that breaks words on specified space with new line
     //like a word processor would
 
     @Test
@@ -24,8 +24,14 @@ public class WordWrapTest {
     }
 
     @Test
-    public void longerLineShouldWrapTwice() {
+    public void evenLongerLineShouldWrapTwice() {
         String result = WordWrap.wrap("The Sleepy Brow", LINE_LENGTH);
         assertEquals("The S\nleepy\n Brow", result);
+    }
+
+    @Test
+    public void longerLineShouldWrapThreeTimes() {
+        String result = WordWrap.wrap("The Sleepy Brow well", LINE_LENGTH);
+        assertEquals("The S\nleepy\n Brow\n well", result);
     }
 }
