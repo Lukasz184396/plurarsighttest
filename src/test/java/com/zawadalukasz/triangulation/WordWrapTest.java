@@ -34,4 +34,10 @@ public class WordWrapTest {
         String result = WordWrap.wrap("The Sleepy Brow well", LINE_LENGTH);
         assertEquals("The S\nleepy\n Brow\n well", result);
     }
+
+    @Test
+    public void longLineDoNotHaveToBeMultipleOfLineLength() {
+        String result = WordWrap.wrap("The Sleepy Brow well.", LINE_LENGTH);
+        assertEquals("The S\nleepy\n Brow\n well\n.", result);
+    }
 }
